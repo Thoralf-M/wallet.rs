@@ -12,10 +12,10 @@ async function run() {
         storagePath: './alice-database'
     })
 
-    manager.setStrongholdPassword(process.env.SH_PASSWORD)
+    manager.setStrongholdPassword("password")
 
-    let backup_path = await manager.backup("./backup", process.env.SH_PASSWORD)
-    
+    let backup_path = await manager.backup("./backup", "password")
+
     console.log('Backup path:', backup_path)
 }
 

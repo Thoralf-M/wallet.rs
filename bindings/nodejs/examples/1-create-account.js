@@ -9,7 +9,7 @@ async function run() {
     const manager = new AccountManager({
         storagePath: './alice-database',
     })
-    manager.setStrongholdPassword(process.env.SH_PASSWORD)
+    manager.setStrongholdPassword("password")
     manager.storeMnemonic(SignerType.Stronghold)
 
     const account = await manager.createAccount({
@@ -18,7 +18,7 @@ async function run() {
     })
 
     console.log('Account created:', account.alias())
-      
+
 }
 
 run()

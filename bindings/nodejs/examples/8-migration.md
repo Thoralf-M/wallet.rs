@@ -68,7 +68,7 @@ Instantiate a account manager with the defined storage path. The manager instanc
 ---
 
 ```
-    manager.setStrongholdPassword(process.env.SH_PASSWORD)
+    manager.setStrongholdPassword("password")
 ```
 
 Set a strong password for stronghold file. This file will store the mnemonic generated in the next step. 

@@ -14,7 +14,7 @@ First of all, let's initialize (open) a secure storage for individual accounts (
 {{ #include ../../../bindings/nodejs/examples/1-create-account.js }}
 ```
 * Storage is initialized under the given path (`./alice-database`)
-* Password is set based on your password in `.env` file (`manager.setStrongholdPassword(process.env.SH_PASSWORD)`)
+* Password is set based on your password in `.env` file (`manager.setStrongholdPassword("password")`)
 * Only during the initialization new database: stronghold mnemonic (seed) is automatically generated and stored by default (`manager.storeMnemonic(SignerType.Stronghold)`)
 * Needless to say, the seed should be set only for the first time. In order to open already initialized database, just a password is enough
 

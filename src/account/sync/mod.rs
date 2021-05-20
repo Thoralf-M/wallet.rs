@@ -10,7 +10,9 @@ use crate::{
         emit_balance_change, emit_confirmation_state_change, emit_transaction_event, BalanceChange,
         TransactionEventType, TransferProgressType,
     },
-    message::{Message, MessageType, RemainderValueStrategy, Transfer},
+    message::{
+        Message, MessagePayload, MessageType, RemainderValueStrategy, TransactionEssence, TransactionInput, Transfer,
+    },
     signing::{GenerateAddressMetadata, SignMessageMetadata, SignerType},
 };
 
@@ -736,7 +738,9 @@ fn get_balance_change_events(
     account_options: AccountOptions,
     before_sync_outputs: HashMap<OutputId, AddressOutput>,
     outputs: &HashMap<OutputId, AddressOutput>,
+    messages: Vec<Message>,
 ) -> Vec<BalanceChangeEventData> {
+    let mut processed_outputs = Vec::new();
     let mut balance_change_events = Vec::new();
     let mut output_change_balance = 0i64;
     // we use this flag in case the new balance is 0
@@ -744,6 +748,7 @@ fn get_balance_change_events(
     // check new and updated outputs to find message ids
     // note that this is unreliable if we're not syncing spent outputs,
     // since not all information are collected.
+    println!("sync_spent_outputs: {}", account_options.sync_spent_outputs);
     if account_options.sync_spent_outputs {
         for (output_id, output) in outputs {
             if !before_sync_outputs.contains_key(output_id) {
@@ -764,9 +769,55 @@ fn get_balance_change_events(
                     message_id: Some(output.message_id),
                 });
                 emitted_event = true;
+                processed_outputs.push(*output_id)
             }
         }
     }
+
+    let mut unprocessed_outputs = Vec::new();
+    for output in &before_sync_outputs {
+        if !processed_outputs.contains(&output.0) {
+            unprocessed_outputs.push(output);
+        }
+    }
+    for output in outputs {
+        if !processed_outputs.contains(&output.0) {
+            unprocessed_outputs.push(output);
+        }
+    }
+    println!("before_sync_outputs len {}", before_sync_outputs.len());
+    println!("outputs len {}", outputs.len());
+    println!("messages len {}", messages.len());
+    // for message in messages {
+    //     if let Some(message_payload) = message.payload {
+    //         if let MessagePayload::Transaction(tx_payload) = message_payload {
+    //             let TransactionEssence::Regular(essence) = tx_payload.essence();
+    //             for tx_input in essence.inputs.iter() {
+    //                 if let TransactionInput::Utxo(utxo) = tx_input {
+    //                     // println!("utxo {:?}", utxo.input.output_id());
+    //                     if let Some(_output) = unprocessed_outputs
+    //                         .iter()
+    //                         .find(|output| output.0 == utxo.input.output_id())
+    //                     {
+    //                         println!("Found input in message {}", utxo.input.output_id());
+    //                         if let Some(address_output) = &utxo.metadata {
+    //                             println!("address_output.amount {}", address_output.amount);
+    //                             let balance_change = BalanceChange::spent(address_output.amount);
+    //                             output_change_balance -= address_output.amount as i64;
+    //                             log::info!("[SYNC] balance change on {} {:?}", address.to_bech32(), balance_change);
+    //                             balance_change_events.push(BalanceChangeEventData {
+    //                                 address: address.clone(),
+    //                                 balance_change,
+    //                                 message_id: Some(message.id),
+    //                             });
+    //                             emitted_event = true;
+    //                         }
+    //                     }
+    //                 }
+    //             }
+    // }
+    // }
+    // }
 
     // we can't guarantee we picked up all output changes since querying spent outputs is
     // optional and the node might prune it so we handle it here; if not all balance change has
@@ -869,6 +920,7 @@ impl AccountSynchronizer {
         addresses: &[Address],
         new_messages: &[Message],
         confirmation_changed_messages: &[Message],
+        account: Account,
     ) -> crate::Result<SyncedAccountEvents> {
         // balance event
         let mut balance_change_events = Vec::new();
@@ -893,6 +945,7 @@ impl AccountSynchronizer {
                     account_options,
                     before_sync_outputs,
                     address_after_sync.outputs(),
+                    account.list_messages(0, 0, Some(MessageType::Sent)).await?,
                 ))
             }
         }
@@ -977,6 +1030,7 @@ impl AccountSynchronizer {
                     account.addresses(),
                     &new_messages,
                     &confirmation_changed_messages,
+                    account.clone(),
                 )
                 .await?;
                 for message in events.new_transaction_events {
@@ -2013,6 +2067,7 @@ mod tests {
             Default::default(),
             Default::default(),
             &address_outputs,
+            vec![],
         );
         assert_eq!(
             new_balance as i64,

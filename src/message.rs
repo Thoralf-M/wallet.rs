@@ -441,7 +441,7 @@ pub enum TransactionInput {
 /// Regular essence.
 #[derive(Debug, Clone, Serialize, Deserialize, Eq, PartialEq)]
 pub struct TransactionRegularEssence {
-    inputs: Box<[TransactionInput]>,
+    pub(crate) inputs: Box<[TransactionInput]>,
     outputs: Box<[TransactionOutput]>,
     payload: Option<Payload>,
     internal: bool,

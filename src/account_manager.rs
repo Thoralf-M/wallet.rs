@@ -1430,7 +1430,7 @@ impl AccountsSynchronizer {
 
             let mut new_messages = Vec::new();
             let mut confirmation_changed_messages = Vec::new();
-            for message in parsed_messages {
+            for message in &parsed_messages {
                 if !messages_before_sync.iter().any(|(id, _)| id == message.id()) {
                     new_messages.push(message.clone());
                 }
@@ -1438,7 +1438,7 @@ impl AccountsSynchronizer {
                     .iter()
                     .any(|(id, confirmed)| id == message.id() && confirmed != message.confirmed())
                 {
-                    confirmation_changed_messages.push(message);
+                    confirmation_changed_messages.push(message.clone());
                 }
             }
 
@@ -1452,6 +1452,7 @@ impl AccountsSynchronizer {
                     account.addresses(),
                     &new_messages,
                     &confirmation_changed_messages,
+                    account.clone(),
                 )
                 .await?;
                 for message in events.new_transaction_events {

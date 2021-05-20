@@ -10,7 +10,7 @@ async function run() {
         storagePath: './alice-database'
     })
 
-    manager.setStrongholdPassword(process.env.SH_PASSWORD)
+    manager.setStrongholdPassword("password")
 
     const account = manager.getAccount('Alice')
     console.log('Account:', account.alias())

@@ -52,7 +52,7 @@ async function run() {
     })
 
     // Set stronghold password
-    manager.setStrongholdPassword(process.env.SH_PASSWORD)
+    manager.setStrongholdPassword("password")
 
     // IMPORTANT: SAVE THIS MNEMONIC SECURELY. IF YOU LOSE IT, YOU POTENTIALLY LOSE EVERYTHING.
     const mnemonic = manager.generateMnemonic()

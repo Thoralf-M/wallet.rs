@@ -5,12 +5,25 @@
 require('dotenv').config()
 
 async function run() {
-	const { AccountManager } = require('@iota/wallet')
+    const { AccountManager, initLogger, addEventListener } = require('@iota/wallet')
     const manager = new AccountManager({
         storagePath: './alice-database'
     })
 
-    manager.setStrongholdPassword(process.env.SH_PASSWORD)
+    initLogger({
+        color_enabled: true,
+        outputs: [{
+            name: './prod23.log',
+            level_filter: 'debug'
+        }]
+    })
+    const callback = function (err, data) {
+        console.log("data:", data)
+    }
+
+    addEventListener("BalanceChange", callback)
+
+    manager.setStrongholdPassword("password")
 
     const account = manager.getAccount('Alice')
     console.log('Account:', account.alias())
