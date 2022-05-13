@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AccountHandle","A thread guard over an account, so we can lock the account during operations."]]});

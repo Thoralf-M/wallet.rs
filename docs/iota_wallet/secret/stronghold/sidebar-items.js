@@ -1,0 +1,1 @@
+initSidebarItems({"type":[["StrongholdSecretManager","Secret manager that uses [`iota_stronghold`] as the backing storage."]]});

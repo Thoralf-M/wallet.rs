@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["HARDENED","Hardened const for the bip path."]],"struct":[["LedgerSecretManager","Secret manager that uses a Ledger hardware wallet."]]});

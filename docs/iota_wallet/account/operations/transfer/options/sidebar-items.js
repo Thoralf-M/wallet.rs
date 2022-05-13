@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["RemainderValueStrategy","The strategy to use for the remainder value management when sending funds."]],"struct":[["TransferOptions","Options for value transfers"]]});

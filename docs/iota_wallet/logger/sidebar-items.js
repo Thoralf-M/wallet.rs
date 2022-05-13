@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["LevelFilter","An enum representing the available verbosity level filters of the logger."]],"fn":[["init_logger","creates a file in which logs will be written in"]]});

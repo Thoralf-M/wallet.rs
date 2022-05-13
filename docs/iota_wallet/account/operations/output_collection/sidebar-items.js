@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["OutputsToCollect","Enum to specify which outputs should be collected"]]});
