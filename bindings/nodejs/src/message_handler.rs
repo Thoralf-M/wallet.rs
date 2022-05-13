@@ -1,7 +1,7 @@
 // Copyright 2021 IOTA Stiftung
 // SPDX-License-Identifier: Apache-2.0
 
-use std::sync::Arc;
+use std::{mem::ManuallyDrop, sync::Arc};
 
 use iota_wallet::{
     events::types::{Event, WalletEventType},
@@ -13,7 +13,7 @@ use neon::prelude::*;
 use tokio::sync::{mpsc::unbounded_channel, RwLock};
 
 // Wrapper so we can destroy the MessageHandler
-pub type MessageHandlerWrapperInner = Arc<RwLock<Option<MessageHandler>>>;
+pub type MessageHandlerWrapperInner = Arc<RwLock<ManuallyDrop<MessageHandler>>>;
 // Wrapper because we can't impl Finalize on MessageHandlerWrapperInner
 pub struct MessageHandlerWrapper(pub MessageHandlerWrapperInner);
 impl Finalize for MessageHandlerWrapper {}
@@ -101,7 +101,9 @@ pub fn message_handler_new(mut cx: FunctionContext) -> JsResult<JsBox<MessageHan
     let channel = cx.channel();
     let message_handler = MessageHandler::new(channel, options);
 
-    Ok(cx.boxed(MessageHandlerWrapper(Arc::new(RwLock::new(Some(message_handler))))))
+    Ok(cx.boxed(MessageHandlerWrapper(Arc::new(RwLock::new(ManuallyDrop::new(
+        message_handler,
+    ))))))
 }
 
 pub fn send_message(mut cx: FunctionContext) -> JsResult<JsUndefined> {
@@ -111,28 +113,25 @@ pub fn send_message(mut cx: FunctionContext) -> JsResult<JsUndefined> {
     let callback = cx.argument::<JsFunction>(2)?.root(&mut cx);
 
     crate::RUNTIME.spawn(async move {
-        if let Some(message_handler) = &*message_handler.read().await {
-            let (response, is_error) = message_handler.send_message(message).await;
-            message_handler.channel.send(move |mut cx| {
-                let cb = callback.into_inner(&mut cx);
-                let this = cx.undefined();
+        let message_handler = message_handler.read().await;
+        let (response, is_error) = message_handler.send_message(message).await;
+        message_handler.channel.send(move |mut cx| {
+            let cb = callback.into_inner(&mut cx);
+            let this = cx.undefined();
 
-                let args = vec![
-                    if is_error {
-                        cx.string(response.clone()).upcast::<JsValue>()
-                    } else {
-                        cx.undefined().upcast::<JsValue>()
-                    },
-                    cx.string(response).upcast::<JsValue>(),
-                ];
+            let args = vec![
+                if is_error {
+                    cx.string(response.clone()).upcast::<JsValue>()
+                } else {
+                    cx.undefined().upcast::<JsValue>()
+                },
+                cx.string(response).upcast::<JsValue>(),
+            ];
 
-                cb.call(&mut cx, this, args)?;
+            cb.call(&mut cx, this, args)?;
 
-                Ok(())
-            });
-        } else {
-            panic!("Message handler got destroyed")
-        }
+            Ok(())
+        });
     });
 
     Ok(cx.undefined())
@@ -152,17 +151,14 @@ pub fn listen(mut cx: FunctionContext) -> JsResult<JsUndefined> {
     let message_handler = Arc::clone(&&cx.argument::<JsBox<MessageHandlerWrapper>>(2)?.0);
 
     crate::RUNTIME.spawn(async move {
-        if let Some(message_handler) = &*message_handler.read().await {
-            let channel = message_handler.channel.clone();
-            message_handler
-                .wallet_message_handler
-                .listen(event_types, move |event_data| {
-                    call_event_callback(&channel, event_data.clone(), callback.clone())
-                })
-                .await;
-        } else {
-            panic!("Message handler got destroyed")
-        }
+        let message_handler = message_handler.read().await;
+        let channel = message_handler.channel.clone();
+        message_handler
+            .wallet_message_handler
+            .listen(event_types, move |event_data| {
+                call_event_callback(&channel, event_data.clone(), callback.clone())
+            })
+            .await;
     });
 
     Ok(cx.undefined())
@@ -171,7 +167,10 @@ pub fn listen(mut cx: FunctionContext) -> JsResult<JsUndefined> {
 pub fn destroy(mut cx: FunctionContext) -> JsResult<JsUndefined> {
     let message_handler = Arc::clone(&&cx.argument::<JsBox<MessageHandlerWrapper>>(0)?.0);
     crate::RUNTIME.spawn(async move {
-        *message_handler.write().await = None;
+        // Drop the MessageHandlerWrapper
+        unsafe {
+            ManuallyDrop::drop(&mut *message_handler.write().await);
+        }
     });
     Ok(cx.undefined())
 }
