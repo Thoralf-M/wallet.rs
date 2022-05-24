@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["account_recovery",""],["background_syncing",""],["backup",""],["get_account",""],["verify_integrity",""]]});
+initSidebarItems({"mod":[["account_recovery",""],["background_syncing",""],["backup",""],["get_account",""],["stronghold",""],["verify_integrity",""]]});
