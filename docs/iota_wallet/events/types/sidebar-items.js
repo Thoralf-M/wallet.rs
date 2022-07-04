@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["TransferProgressEvent",""],["WalletEvent",""],["WalletEventType",""]],"struct":[["AddressConsolidationNeeded",""],["AddressData","Address event data."],["Event",""],["NewOutputEvent",""],["SpentOutputEvent",""],["TransactionInclusionEvent",""]]});
+initSidebarItems({"enum":[["TransactionProgressEvent",""],["WalletEvent",""],["WalletEventType",""]],"struct":[["AddressConsolidationNeeded",""],["AddressData","Address event data."],["Event",""],["NewOutputEvent",""],["SpentOutputEvent",""],["TransactionInclusionEvent",""]]});

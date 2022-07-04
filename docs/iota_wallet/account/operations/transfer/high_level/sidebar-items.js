@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["minimum_storage_deposit",""],["mint_native_token",""],["mint_nfts",""],["send_amount",""],["send_micro_transaction",""],["send_native_tokens",""],["send_nft",""]]});

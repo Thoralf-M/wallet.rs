@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["default_address_start_index",""],["default_automatic_output_consolidation",""],["default_output_consolidation_threshold",""],["default_sync_aliases_and_nfts",""],["default_sync_pending_transactions",""],["default_try_collect_outputs",""]],"struct":[["SyncOptions","The synchronization options"]]});
+initSidebarItems({"fn":[["default_address_start_index",""],["default_sync_aliases_and_nfts",""],["default_sync_incoming_transactions",""],["default_sync_pending_transactions",""]],"struct":[["SyncOptions","The synchronization options"]]});

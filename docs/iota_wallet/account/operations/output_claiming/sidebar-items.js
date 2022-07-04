@@ -1,0 +1,1 @@
+initSidebarItems({"enum":[["OutputsToClaim","Enum to specify which outputs should be claimed"]]});

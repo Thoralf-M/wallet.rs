@@ -1,0 +1,1 @@
+initSidebarItems({"constant":[["NATIVE_TOKEN_OVERFLOW",""]],"fn":[["add_native_token_to_output",""],["aggregate_stripped_outputs","Aggregate outputs with `token_id` that sum up to the required burn_token_amount"],["create_output_and_replace_native_tokens",""],["strip_native_token_if_found",""]],"struct":[["StrippedOutput",""],["StrippedOutputAggregate",""]]});

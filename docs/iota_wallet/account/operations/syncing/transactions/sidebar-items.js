@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["updated_transaction_and_outputs",""]],"struct":[["TransactionSyncResult",""]]});
+initSidebarItems({"fn":[["process_transaction_with_unknown_state",""],["updated_transaction_and_outputs",""]]});

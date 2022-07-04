@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["build_transaction",""],["high_level",""],["input_selection",""],["options",""],["prepare_transaction",""],["sign_transaction",""],["submit_transaction",""]],"struct":[["TransferResult","The result of a transfer, block_id is an option because submitting the transaction could fail"]]});

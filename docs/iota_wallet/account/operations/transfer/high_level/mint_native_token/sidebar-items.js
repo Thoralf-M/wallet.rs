@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["NativeTokenOptions","Address and nft for `mint_native_token()`"]]});
