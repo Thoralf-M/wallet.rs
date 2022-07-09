@@ -1,1 +1,1 @@
-initSidebarItems({});
+initSidebarItems({"fn":[["add_balances",""]]});

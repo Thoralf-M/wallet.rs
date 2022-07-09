@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["build_transaction",""],["high_level",""],["input_selection",""],["options",""],["prepare_output",""],["prepare_transaction",""],["sign_transaction",""],["submit_transaction",""]],"struct":[["TransactionResult","The result of a transaction, block_id is an option because submitting the transaction could fail"]]});
+initSidebarItems({"mod":[["build_transaction",""],["high_level",""],["input_selection",""],["options",""],["prepare_output",""],["prepare_transaction",""],["sign_transaction",""],["submit_transaction",""]]});
