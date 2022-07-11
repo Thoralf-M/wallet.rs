@@ -1,0 +1,1 @@
+initSidebarItems({"struct":[["AddressWithAmount","address with amount for `send_amount()`"]]});
