@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["get_first_public_address","Generate the first public address of an account"]],"struct":[["AccountBuilder","The AccountBuilder"]]});

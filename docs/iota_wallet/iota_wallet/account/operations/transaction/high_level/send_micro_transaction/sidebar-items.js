@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["AddressWithMicroAmount","address with amount for `send_micro_transaction()`"]]});

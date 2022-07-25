@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["AddressAndNftId","Address and nft for `send_nft()`"]]});

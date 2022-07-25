@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["AddressNativeTokens","Address, amount and native tokens for `send_native_tokens()`"]]});

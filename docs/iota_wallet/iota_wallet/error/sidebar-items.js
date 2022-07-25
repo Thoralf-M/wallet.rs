@@ -1,1 +1,0 @@
-initSidebarItems({"enum":[["Error","The wallet error type."]]});

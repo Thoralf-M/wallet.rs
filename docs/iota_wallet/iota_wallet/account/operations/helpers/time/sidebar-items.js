@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["can_output_be_unlocked_forever_from_now_on",""],["can_output_be_unlocked_now",""],["is_expired",""]]});

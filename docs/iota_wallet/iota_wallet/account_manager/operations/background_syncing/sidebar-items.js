@@ -1,1 +1,0 @@
-initSidebarItems({"constant":[["DEFAUTL_BACKGROUNDSYNCING_INTERVAL","The default interval for background syncing"]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["MintTokenTransaction","The result of a minting native token transaction, block_id is an option because submitting the transaction could fail"],["MintTokenTransactionDto","Dto for MintTokenTransaction"],["NativeTokenOptions","Address and nft for `mint_native_token()`"]]});

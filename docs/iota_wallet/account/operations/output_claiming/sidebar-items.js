@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["OutputsToClaim","Enum to specify which outputs should be claimed"]]});
+initSidebarItems({"constant":[["MAX_CLAIM_INPUTS","Defines how many inputs can be claimed with one transaction. This limit is needed because in addition we might need to create the double amount of outputs because of the storage deposit return and also consider the remainder output."]],"enum":[["OutputsToClaim","Enum to specify which outputs should be claimed"]],"fn":[["sdr_not_expired","Get the `StorageDepositReturnUnlockCondition`, if not expired"]]});

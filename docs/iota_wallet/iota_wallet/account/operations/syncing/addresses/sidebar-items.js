@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["get_basic_outputs_for_nft_outputs",""],["get_foundry_and_basic_outputs_for_alias_outputs",""]]});

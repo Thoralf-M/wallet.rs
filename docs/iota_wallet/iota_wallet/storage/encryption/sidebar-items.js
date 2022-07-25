@@ -1,1 +1,0 @@
-initSidebarItems({"fn":[["decrypt_record",""],["encrypt_record",""]]});

@@ -1,1 +1,0 @@
-initSidebarItems({"struct":[["AddressGenerationOptions","Options for address generation"]]});

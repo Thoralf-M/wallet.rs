@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["mint_native_token",""],["mint_nfts",""]]});

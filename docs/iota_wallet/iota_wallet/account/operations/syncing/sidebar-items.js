@@ -1,1 +1,0 @@
-initSidebarItems({"mod":[["addresses",""],["options",""],["outputs",""],["transactions",""]]});
