@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["account_recovery",""],["background_syncing",""],["backup",""],["get_account",""],["ledger_nano",""],["stronghold",""],["verify_integrity",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["account_recovery",""],["background_syncing",""],["get_account",""],["ledger_nano",""],["stronghold",""],["stronghold_backup",""],["verify_integrity",""]]};

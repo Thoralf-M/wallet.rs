@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["rocksdb","RocksDB storage adapter."]],"trait":[["StorageAdapter","The storage adapter."]]});
+window.SIDEBAR_ITEMS = {"mod":[["rocksdb","RocksDB storage adapter."]],"trait":[["StorageAdapter","The storage adapter."]]};

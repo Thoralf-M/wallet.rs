@@ -1,1 +1,1 @@
-initSidebarItems({"constant":[["DEFAUTL_BACKGROUNDSYNCING_INTERVAL","The default interval for background syncing"]]});
+window.SIDEBAR_ITEMS = {"constant":[["DEFAULT_BACKGROUNDSYNCING_INTERVAL","The default interval for background syncing"]]};

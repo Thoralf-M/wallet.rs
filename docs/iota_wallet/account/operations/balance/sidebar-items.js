@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["add_balances",""]]});
+window.SIDEBAR_ITEMS = {"fn":[["add_balances",""]]};

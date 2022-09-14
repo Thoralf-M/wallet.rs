@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["validate_empty_state",""]]});
+window.SIDEBAR_ITEMS = {"fn":[["validate_empty_state",""]]};

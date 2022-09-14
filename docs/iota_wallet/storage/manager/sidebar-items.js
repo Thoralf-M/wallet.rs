@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ManagerStorage","The storage used by the manager."]],"fn":[["new_storage_manager","Sets the storage adapter."],["parse_accounts",""]],"struct":[["StorageManager","Storage manager"]],"type":[["StorageManagerHandle",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["ManagerStorage","The storage used by the manager."]],"fn":[["new_storage_manager","Sets the storage adapter."],["parse_accounts",""]],"struct":[["StorageManager","Storage manager"]],"type":[["StorageManagerHandle",""]]};

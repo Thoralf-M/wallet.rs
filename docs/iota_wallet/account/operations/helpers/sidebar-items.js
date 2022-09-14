@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["time","The module for time related functions"]]});
+window.SIDEBAR_ITEMS = {"mod":[["time","The module for time related functions"]]};

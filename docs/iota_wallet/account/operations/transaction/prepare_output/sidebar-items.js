@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["ReturnStrategy",""]],"struct":[["Assets",""],["AssetsDto",""],["Features",""],["OutputOptions",""],["OutputOptionsDto",""],["StorageDeposit",""],["Unlocks",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["ReturnStrategy",""]],"struct":[["Assets",""],["AssetsDto",""],["Features",""],["OutputOptions",""],["OutputOptionsDto",""],["StorageDeposit",""],["Unlocks",""]]};

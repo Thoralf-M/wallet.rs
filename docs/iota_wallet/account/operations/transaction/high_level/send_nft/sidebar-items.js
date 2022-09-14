@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AddressAndNftId","Address and nft for `send_nft()`"]]});
+window.SIDEBAR_ITEMS = {"struct":[["AddressAndNftId","Address and nft for `send_nft()`"]]};

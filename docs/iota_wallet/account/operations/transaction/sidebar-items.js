@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["build_transaction",""],["high_level",""],["input_selection",""],["options",""],["prepare_output",""],["prepare_transaction",""],["sign_transaction",""],["submit_transaction",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["build_transaction",""],["high_level",""],["input_selection",""],["options",""],["prepare_output",""],["prepare_transaction",""],["sign_transaction",""],["submit_transaction",""]]};

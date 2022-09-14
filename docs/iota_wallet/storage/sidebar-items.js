@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["adapter","Storage adapter."],["constants","Storage constants."],["encryption","Storage encryption."],["manager","Storage manager."]],"struct":[["Storage",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["adapter","Storage adapter."],["constants","Storage constants."],["manager","Storage manager."]],"struct":[["Storage",""]]};

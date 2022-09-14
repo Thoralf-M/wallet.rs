@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["builder",""],["operations",""]],"struct":[["AccountManager","The account manager, used to create and get accounts. One account manager can hold many accounts, but they should all share the same secret_manager type with the same seed/mnemonic."]]});
+window.SIDEBAR_ITEMS = {"mod":[["builder",""],["operations",""]],"struct":[["AccountManager","The account manager, used to create and get accounts. One account manager can hold many accounts, but they should all share the same secret_manager type with the same seed/mnemonic."]]};

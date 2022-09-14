@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["AccountMethod","Each public account method."]]});
+window.SIDEBAR_ITEMS = {"enum":[["AccountMethod","Each public account method."]]};

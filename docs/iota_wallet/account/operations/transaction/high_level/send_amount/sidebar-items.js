@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AddressWithAmount","address with amount for `send_amount()`"]]});
+window.SIDEBAR_ITEMS = {"struct":[["AddressWithAmount","address with amount for `send_amount()`"]]};

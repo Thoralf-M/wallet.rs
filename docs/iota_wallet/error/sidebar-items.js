@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Error","The wallet error type."]]});
+window.SIDEBAR_ITEMS = {"enum":[["Error","The wallet error type."]]};

@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["replace_unlock_conditions",""]]});
+window.SIDEBAR_ITEMS = {"fn":[["replace_unlock_conditions",""]]};

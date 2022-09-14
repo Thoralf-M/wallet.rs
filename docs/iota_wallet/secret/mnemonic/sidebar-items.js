@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["MnemonicSecretManager","Secret manager that uses only a mnemonic."]]});
+window.SIDEBAR_ITEMS = {"struct":[["MnemonicSecretManager","Secret manager that uses only a mnemonic."]]};

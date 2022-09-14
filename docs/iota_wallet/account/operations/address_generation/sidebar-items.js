@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AddressGenerationOptions","Options for address generation"]]});
+window.SIDEBAR_ITEMS = {"struct":[["AddressGenerationOptions","Options for address generation"]]};

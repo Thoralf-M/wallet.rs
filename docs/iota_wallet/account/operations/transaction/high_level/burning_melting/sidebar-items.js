@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["burn_native_token",""],["burn_nft",""],["destroy_alias",""],["destroy_foundry",""],["melt_native_token",""],["sweep_outputs",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["burn_native_token",""],["burn_nft",""],["decrease_native_token_supply",""],["destroy_alias",""],["destroy_foundry",""],["sweep_outputs",""]]};

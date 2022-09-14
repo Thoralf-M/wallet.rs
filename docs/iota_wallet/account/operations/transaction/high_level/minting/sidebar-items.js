@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["mint_native_token",""],["mint_nfts",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["increase_native_token_supply",""],["mint_native_token",""],["mint_nfts",""]]};

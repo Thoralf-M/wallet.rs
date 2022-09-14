@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["types",""]],"struct":[["EventEmitter",""]],"type":[["Handler",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["types",""]],"struct":[["EventEmitter",""]],"type":[["Handler",""]]};

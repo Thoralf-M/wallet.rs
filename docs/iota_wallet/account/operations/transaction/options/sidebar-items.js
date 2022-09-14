@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["RemainderValueStrategy","The strategy to use for the remainder value management when sending funds."]],"struct":[["TransactionOptions","Options for transactions"]]});
+window.SIDEBAR_ITEMS = {"enum":[["RemainderValueStrategy","The strategy to use for the remainder value management when sending funds."]],"struct":[["TransactionOptions","Options for transactions"]]};

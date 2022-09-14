@@ -1,1 +1,1 @@
-initSidebarItems({"struct":[["AccountHandle","A thread guard over an account, so we can lock the account during operations."]]});
+window.SIDEBAR_ITEMS = {"struct":[["AccountHandle","A thread guard over an account, so we can lock the account during operations."],["FilterOptions","Options to filter outputs"]]};

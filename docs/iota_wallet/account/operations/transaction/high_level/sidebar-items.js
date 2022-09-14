@@ -1,1 +1,1 @@
-initSidebarItems({"mod":[["burning_melting",""],["minimum_storage_deposit",""],["minting",""],["send_amount",""],["send_micro_transaction",""],["send_native_tokens",""],["send_nft",""]]});
+window.SIDEBAR_ITEMS = {"mod":[["burning_melting",""],["minimum_storage_deposit",""],["minting",""],["send_amount",""],["send_micro_transaction",""],["send_native_tokens",""],["send_nft",""]]};

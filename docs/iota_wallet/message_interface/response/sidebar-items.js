@@ -1,1 +1,1 @@
-initSidebarItems({"enum":[["Response","The response message."]],"type":[["IncomingTransactionDataDto",""]]});
+window.SIDEBAR_ITEMS = {"enum":[["Response","The response message."]],"type":[["IncomingTransactionDataDto",""]]};

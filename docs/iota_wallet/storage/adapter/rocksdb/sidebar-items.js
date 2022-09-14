@@ -1,1 +1,1 @@
-initSidebarItems({"constant":[["STORAGE_ID","The storage id."]],"fn":[["storage_err",""]],"struct":[["RocksdbStorageAdapter","Key value storage adapter."]]});
+window.SIDEBAR_ITEMS = {"constant":[["STORAGE_ID","The storage id."]],"fn":[["storage_err",""]],"struct":[["RocksdbStorageAdapter","Key value storage adapter."]]};

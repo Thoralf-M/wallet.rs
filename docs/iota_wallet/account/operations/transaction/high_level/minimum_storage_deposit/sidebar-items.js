@@ -1,1 +1,1 @@
-initSidebarItems({"fn":[["minimum_storage_deposit_basic_native_tokens","Computes the minimum amount that an output needs to have, when sent with [AddressUnlockCondition], [StorageDepositReturnUnlockCondition] and [ExpirationUnlockCondition]."]]});
+window.SIDEBAR_ITEMS = {"fn":[["minimum_storage_deposit_basic_native_tokens","Computes the minimum amount that an output needs to have, when sent with [AddressUnlockCondition], [StorageDepositReturnUnlockCondition] and [ExpirationUnlockCondition]."]]};

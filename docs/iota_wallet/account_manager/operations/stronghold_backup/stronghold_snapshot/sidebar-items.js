@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"constant":[["ACCOUNTS_KEY",""],["BACKUP_SCHEMA_VERSION",""],["BACKUP_SCHEMA_VERSION_KEY",""],["CLIENT_OPTIONS_KEY",""],["COIN_TYPE_KEY",""],["SECRET_MANAGER_KEY",""]],"fn":[["read_data_from_stronghold_snapshot",""],["store_data_to_stronghold",""]]};
