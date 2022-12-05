@@ -70,7 +70,7 @@ jobs:
      - name: Build wheels
        working-directory: bindings/python
        run: |
-         python3 -m pip install -Iv maturin==0.9.4
+         python3 -m pip install -v maturin
          maturin build --release --manylinux off
 
      - uses: actions/upload-artifact@v2
