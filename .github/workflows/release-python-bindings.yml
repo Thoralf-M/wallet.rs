@@ -87,6 +87,7 @@ jobs:
         if: matrix.os == 'ubuntu-latest'
         uses: PyO3/maturin-action@v1
         with:
+          target: ${{ matrix.target }}
           manylinux: auto
           container: off
           args: --release --out dist -m bindings/python/Cargo.toml -i python${{ matrix.python-version }}
