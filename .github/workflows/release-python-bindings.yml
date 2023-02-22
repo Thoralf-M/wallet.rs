@@ -87,10 +87,12 @@ jobs:
         run: |
           rustup target add aarch64-unknown-linux-gnu
           sudo apt-get install musl-tools clang llvm -y
+          sudo apt-get install build-essential binutils-aarch64-linux-gnu gcc-aarch64-linux-gnu
           export CC_aarch64_unknown_linux_musl=clang-$llvm_version
           export AR_aarch64_unknown_linux_musl=llvm-ar-$llvm_version
           export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_RUSTFLAGS="$rustflags_self_contained"
           export CARGO_TARGET_AARCH64_UNKNOWN_LINUX_MUSL_RUNNER="$qemu_aarch64"
+          cargo install cross
 
       # Build without container on linux
       - name: Build wheels
